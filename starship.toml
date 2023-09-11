@@ -11,7 +11,6 @@ palette = "pastel"                                                              
 
 format = """\
     ([](bg:color_foreground_dark fg:color_background_base)${custom.ssh_connection}[](bg:color_background_base fg:color_foreground_dark))\
-    $Macos\
     ([](bg:color_foreground_dark fg:color_background_base)$shell[](bg:color_background_base fg:color_foreground_dark))\
     ([](bg:color_base_red_light fg:color_background_base)$sudo[](bg:color_background_base fg:color_base_red_light))\
     ([](bg:color_base_red_light fg:color_background_base)${custom.root}[](bg:color_background_base fg:color_base_red_light))\
