@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Temporary directory to check out the latest version of the main branch
-TEMP_DIR="~/.config/Starship/"
+TEMP_DIR="~/tmp/Starship/"
 
 # Create the temporary directory if it doesn't exist
 mkdir -p "$TEMP_DIR"
