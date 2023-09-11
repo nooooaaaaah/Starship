@@ -302,7 +302,6 @@ color_git_state = "#E58F73"           # color_git_commit
 color_git_status = "#eeb64d"
 color_vcsh = "#121212"                # color_foreground_dark
 
-
 ## SSH Colors
 color_ssh_connection = "#f67C99"
 
