@@ -5,9 +5,9 @@
 ### Generic prompt configurations
 scan_timeout = 30                                                                                          # default = 30
 command_timeout = 500                                                                                      # default = 500
-add_newline = true                                                                                        # Don't print a new line before the start of the prompt
+add_newline = true                                                                                         # Don't print a new line before the start of the prompt
 continuation_prompt = "[](bg:color_background_base fg:color_base_orange)[](fg:color_background_base)"
-palette = "coffee"                                                                                         # select the color palette to be used
+palette = "pastel"                                                                                         # select the color palette to be used
 
 format = """\
     ([](bg:color_foreground_dark fg:color_background_base)${custom.ssh_connection}[](bg:color_background_base fg:color_foreground_dark))\
@@ -81,7 +81,7 @@ home_symbol = " " # nf-seti-home
 # home_symbol = "󰮧" # nf-md-home_variant_outline
 # home_symbol = "" # nf-oct-home
 # home_symbol = "" # nf-cod-home
-read_only = " "                                                # nf-fa-lock
+read_only = " "                                                                           # nf-fa-lock
 style = "italic bg:color_directory fg:color_foreground_light"
 read_only_style = "bg:color_base_red fg:color_foreground_light"
 before_repo_root_style = "italic bg:color_directory_repo_before fg:color_foreground_light"
@@ -232,7 +232,7 @@ diverged = "󰡏 ${ahead_count} ${behind_count}" # nf-md-arrow_expand_vertical
 format = "[($staged$modified$renamed$untracked$deleted$conflicted$stashed$ahead_behind )]($style)"
 
 [battery]
-disabled = false 
+disabled = false
 full_symbol = "󰁹"                       # nf-md-battery
 charging_symbol = "󱊥 "                  # nf-md-battery_charging_medium
 discharging_symbol = "󱊡"                # nf-md-battery_low
@@ -249,30 +249,37 @@ style = "bg:color_base_red_light fg:color_foreground_dark"
 threshold = 100
 style = "bg:color_base_red_light fg:color_foreground_light"
 
+[username]
+format = "[$user in ](fg:your_color_here bg:your_background_here) "  # replace with your actual colors
+
+[hostname]
+format = "🌐 $hostname in "
+style = "your_desired_style_for_hostname_here"  # replace with your actual style
+
 [custom.ssh_connection]
 description = "Indicates when connected via SSH"
 command = "echo $SSH_CONNECTION"
 when = "env:SSH_CONNECTION"
 style = "bg:color_ssh_connection fg:color_foreground_light"
-symbol = "" # You can choose any symbol you like
+symbol = ""
 format = "[$symbol]($style)[](bg:color_background_base fg:color_ssh_connection)"
 
-[palettes.coffee]
+[palettes.pastel]
 ## Generics -- editor
-color_foreground_light = "#fff2cf"      # myth_editor_foreground
-color_foreground_dark = "#895797"       # myth_editor_background
+color_foreground_light = "#fff2cf"
+color_foreground_dark = "#895797"
 color_background_base = "#d79494"
-color_directory = "#d081e0"             # myth_editor_
-color_directory_repo_before = "#8A848B" # myth_editor_
-color_hostname = "#DAA25D"              # myth_hosts_local
-color_username = "#1988FF"              # myth_editor_enitity
-color_base_blue = "#b9def8"            # myth_editor_constants
-color_base_magenta = "#BF66FF"          # myth_editor_deprecated
-color_base_orange = "#FFA200"           # myth_editor_main
-color_base_red = "#E83017"              # myth_editor_diff_removed
-color_base_red_light = "#FF620D"        # myth_editor_function
+color_directory = "#d081e0"
+color_directory_repo_before = "#8A848B"
+color_hostname = "#DAA25D"
+color_username = "#1988FF"
+color_base_blue = "#b9def8"
+color_base_magenta = "#BF66FF"
+color_base_orange = "#FFA200"
+color_base_red = "#E83017"
+color_base_red_light = "#FF620D"
 color_base_red_dark = "#BD1000"
-color_base_yellow = "#FFD90D"           # myth_editor_storages
+color_base_yellow = "#FFD90D"
 ## Specifics
 ## General colors
 color_os = "#f2ff12"          # color_base_lightYellow
@@ -298,7 +305,7 @@ color_vcsh = "#121212"                # color_foreground_dark
 
 
 ## SSH Colors
-color_ssh_connection = "#ff5733"
+color_ssh_connection = "#f67C99"
 
 ## Toolchain version
 color_dotnet = "#796add"
