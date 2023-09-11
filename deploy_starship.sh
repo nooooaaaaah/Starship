@@ -7,7 +7,7 @@ TEMP_DIR="~/tmp/Starship/"
 mkdir -p "$TEMP_DIR"
 
 # The destination where the starship.toml file is read by Starship
-STARSHIP_CONFIG_DEST="~/.config/Starship/starship.toml"
+STARSHIP_CONFIG_DEST="~/.config/Starship/"
 
 # Check out the latest version of the main branch to the temporary directory
 GIT_WORK_TREE="$TEMP_DIR" git checkout -f main
