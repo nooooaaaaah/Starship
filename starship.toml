@@ -1,0 +1,298 @@
+# Note: comments for symbols refer to the class name of Nerd Fonts
+# Starship version support: 1.14.2
+"$schema" = 'https://starship.rs/config-schema.json'
+
+### Generic prompt configurations
+scan_timeout = 30                                                                                          # default = 30
+command_timeout = 500                                                                                      # default = 500
+add_newline = true                                                                                        # Don't print a new line before the start of the prompt
+continuation_prompt = "[](bg:color_background_base fg:color_base_orange)[](fg:color_background_base)"
+palette = "coffee"                                                                                         # select the color palette to be used
+
+format = """\
+    $Macos\
+    ([](bg:color_foreground_dark fg:color_background_base)$shell[](bg:color_background_base fg:color_foreground_dark))\
+    ([](bg:color_base_red_light fg:color_background_base)$sudo[](bg:color_background_base fg:color_base_red_light))\
+    ([](bg:color_base_red_light fg:color_background_base)${custom.root}[](bg:color_background_base fg:color_base_red_light))\
+    ([](bg:color_username fg:color_background_base)${custom.ssh_user}[](bg:color_background_base fg:color_username))\
+    ([](bg:color_base_red_light fg:color_background_base)${custom.ssh_root}[](bg:color_background_base fg:color_base_red_light))\
+    ([](bg:color_hostname fg:color_background_base)${custom.ssh_host}[](bg:color_background_base fg:color_hostname))\
+    ([](bg:color_username fg:color_background_base)$username[](bg:color_background_base fg:color_username))\
+    ([](bg:color_hostname fg:color_background_base)$hostname[](bg:color_background_base fg:color_hostname))\
+    (↓ Styling of the directory module is handled in the module section ↓)\
+    (($directory))\
+    (↓ Container modules ↓)\
+    ([](bg:color_docker fg:color_background_base)$docker_context[](bg:color_background_base fg:color_docker))\
+    ([](bg:color_container fg:color_background_base)$container[](bg:color_background_base fg:color_container))\
+    (↑ Container modules ↑)\
+    (↓ Toolchain version modules ↓)\
+    ([](bg:color_dotnet fg:color_background_base)$dotnet[](bg:color_background_base fg:color_dotnet))\
+    ([](bg:color_dotnet fg:color_background_base)${custom.dotnetUnitTest}[](bg:color_background_base fg:color_dotnet))\
+    ([](bg:color_nodejs fg:color_background_base)$nodejs[](bg:color_background_base fg:color_nodejs))\
+    ([](bg:color_python fg:color_background_base)$python[](bg:color_background_base fg:color_python))\
+    (↑ Toolchain version modules ↑)\
+    (↓ Package modules ↓)\
+    ([](bg:color_package fg:color_background_base)$package[](bg:color_background_base fg:color_package))\
+    (↑ Package modules ↑)\
+    ([](bg:color_memory fg:color_background_base)$memory_usage[](bg:color_background_base fg:color_memory))\
+    ([](bg:color_env_var fg:color_background_base)${env_var.FIRST}[](bg:color_background_base fg:color_env_var))\
+    (↑ above input line ↑)\
+    (\
+        [](bg:none fg:color_background_base)\
+        $line_break\
+    )\
+    (↓ on input line ↓)\
+    ($localip)\
+    ($cmd_duration)\
+    ($shlvl)\
+    ($jobs)\
+    ($status)\
+    ($character)\
+"""
+right_format = """\
+    (\
+        [](bg:none fg:color_base_blue)[](bg:color_base_blue fg:color_background_base)\
+        ([](bg:color_background_base fg:color_git_branch)${custom.giturl}(bg:color_git_branch fg:color_background_base))\
+        ([](bg:color_background_base fg:color_git_branch)$git_branch[](bg:color_git_branch fg:color_background_base))\
+        ([](bg:color_git_branch fg:color_git_commit)$git_commit[](bg:color_git_commit fg:color_background_base))\
+        ([](bg:color_background_base fg:color_git_status)$git_status[](bg:color_git_status fg:color_background_base))\
+        ([](bg:color_background_base fg:color_git_state)$git_state[](bg:color_git_state fg:color_background_base))\
+        ([](bg:color_background_base fg:color_git_metrics)$git_metrics[](bg:color_git_metrics fg:color_background_base))\
+        ([](bg:color_background_base fg:color_base_red_light)$battery[](bg:color_base_red_light fg:color_background_base))\
+        ([](bg:color_background_base fg:color_time)$time[](bg:color_time fg:color_background_base))\
+    )\
+"""
+## Generic prompt configurations
+[character]
+success_symbol = "[](bg:color_base_blue fg:color_background_base)[](fg:color_base_blue)"
+error_symbol = "[](bg:color_base_red fg:color_background_base)[](fg:color_base_red)"
+vicmd_symbol = "[](bg:color_background_base fg:color_base_blue)[  ](bold bg:color_base_blue fg:color_foreground_dark)[](bg:color_base_blue fg:color_foreground_dark)"
+vimcmd_visual_symbol = "[](bg:color_background_base fg:color_base_yellow)[  ](bold bg:color_base_yellow fg:color_foreground_dark)[](bg:color_base_yellow fg:color_foreground_dark)"
+vimcmd_replace_symbol = "[](bg:color_background_base fg:color_base_orange)[  ](bold bg:color_base_orange fg:color_foreground_dark)[](bg:color_base_orange fg:color_foreground_dark)"
+vimcmd_replace_one_symbol = "[](bg:color_background_base fg:color_base_orange)[  ](bold bg:color_base_orange fg:color_foreground_light)[](bg:color_base_orange fg:color_foreground_dark)"
+format = "$symbol"
+
+[line_break]
+disabled = true
+
+[directory]
+home_symbol = " " # nf-seti-home
+# home_symbol = "󰮧" # nf-md-home_variant_outline
+# home_symbol = "" # nf-oct-home
+# home_symbol = "" # nf-cod-home
+read_only = " "                                                # nf-fa-lock
+style = "italic bg:color_directory fg:color_foreground_light"
+read_only_style = "bg:color_base_red fg:color_foreground_light"
+before_repo_root_style = "italic bg:color_directory_repo_before fg:color_foreground_light"
+repo_root_style = "italic bold bg:color_directory fg:color_foreground_light"
+# truncate_to_repo = false
+truncation_length = 4    # default = 3
+truncation_symbol = "… " # default = ""
+# fish_style_pwd_dir_length = 3 # default = 0
+# use_logical_path = false
+# use_os_path_sep = false
+format = "([](bg:color_base_red fg:color_background_base)[$read_only]($read_only_style)[](bg:color_background_base fg:color_base_red))[](bg:color_directory fg:color_background_base)[$path]($style)[](bg:color_background_base fg:color_directory)"
+repo_root_format = """\
+    ([](bg:color_base_red fg:color_background_base)[$read_only]($read_only_style)[](bg:color_background_base fg:color_base_red))\
+    [](bg:color_directory fg:color_background_base)\
+    [$repo_root]($repo_root_style)\
+    [$path]($style)\
+    [](bg:color_background_base fg:color_directory)\
+"""
+[nodejs]
+symbol = "💩"
+style = "bg:color_nodejs fg:color_foreground_light"
+format = "[$symbol($version )]($style)"
+
+[dotnet]
+symbol = "\ue77f"
+style = "bg:color_dotnet fg:color_foreground_light"
+heuristic = true
+detect_extensions = ["csproj", "fsproj", "xproj", "sln"]
+format = "[$symbol.Net($version)]($style)"
+
+[python]
+symbol = "\U000f0320"
+style = "bg:color_python fg:color_foreground_dark"
+python_binary = ["python3", "python", "python2"]
+format = "[${symbol}(${pyenv_prefix}${version})(\\($virtualenv\\))]($style)"
+
+[shell]
+bash_indicator = "\\$_"
+fish_indicator = ""
+zsh_indicator = "%_"
+powershell_indicator = "\ue683"
+ion_indicator = "(\\$_)"
+elvish_indicator = "\U000f0627"
+tcsh_indicator = "\U000f01e5 "
+nu_indicator = "[\U000f096d](fg:color_base_blue)"
+xonsh_indicator = "🐚"
+cmd_indicator = "\uebc4"
+unknown_indicator = "\uf059 "
+style = "bg:color_foreground_dark fg:color_foreground_light"
+format = "[$indicator]($style)"
+
+
+[custom.dotnetUnitTest]
+description = "Display if project is for Unit Tests"
+symbol = "✔"
+style = "bg:color_dotnet"
+when = "/Users/noahspielman/.config/StarShipScripts/dotnetUnitTestCheck.sh"
+format = "[$symbol]($style)"
+
+[custom.giturl]
+disabled = true
+description = "Display icon for remote Git server"
+command = """
+    GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
+    if [[ "$GIT_REMOTE" =~ "github" ]]; then
+        # GIT_REMOTE_SYMBOL="" # nf-cod-github_inverted
+        GIT_REMOTE_SYMBOL="" # nf-fa-github
+    elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
+        GIT_REMOTE_SYMBOL="" # nf-fa-gitlab
+    elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
+        GIT_REMOTE_SYMBOL="" # nf-fa-bitbucket
+    elif [[ "$GIT_REMOTE" =~ "git" ]]; then
+        GIT_REMOTE_SYMBOL="" # nf-fa-git_square
+    else
+        GIT_REMOTE_SYMBOL="󰊢 " # nf-md-git
+        # GIT_REMOTE_SYMBOL="" # nf-fa-unlink
+        # GIT_REMOTE_SYMBOL="󰜛" # nf-md-source_commit_local
+    fi
+    echo "$GIT_REMOTE_SYMBOL "
+"""
+require_repo = true
+when = true
+shell = ["bash", "--noprofile", "--norc"]
+format = "[$output ](bg:color_git_branch fg:color_foreground_dark)"
+
+[git_branch]
+# disabled = true
+symbol = "" # nf-oct-git_branch
+# symbol = "󰊢 " # nf-md-git
+style = "bg:color_git_branch fg:color_foreground_dark"
+# always_show_remote = true
+# truncation_length = 4 # default = 9223372036854775807
+# truncation_symbol = "" # default = "…"
+# only_attached = true
+# ignore_branches = ["main", "master"]
+format = "[$symbol $branch(:$remote_name)]($style)"
+## other variables:
+##   remote_branch = The name of the branch tracked on remote_name
+
+[git_commit]
+# disabled = true
+style = "bg:color_git_commit fg:color_foreground_dark"
+commit_hash_length = 4                                 # default = 7
+# only_detached = false
+tag_disabled = false
+tag_symbol = "󰓹 "    # nf-md-tag
+# tag_max_candidates = 0
+format = "[ $hash $tag]($style)" #  = nf-fa-hashtag
+
+[git_metrics]
+# disabled = false
+added_style = 'bg:color_git_metrics fg:color_foreground_light'
+deleted_style = 'bg:color_git_metrics fg:color_foreground_light'
+# only_nonzero_diffs = false
+# format = '([󰺪 $added]($added_style))([ 󰺨 $deleted]($deleted_style))' # 󰺪 = nf-md-text_box_plus // 󰺨 = nf-md-text_box_minus
+format = '([󰺪 ](bg:color_git_metrics fg:color_git_metrics_added)[$added]($added_style))([ 󰺨 ](bg:color_git_metrics fg:color_git_metrics_deleted)[$deleted]($deleted_style))' # 󰺪 = nf-md-text_box_plus // 󰺨 = nf-md-text_box_minus
+
+[git_state]
+# disabled = true
+style = "bg:color_git_state fg:color_foreground_dark"
+rebase = "rebasing"
+merge = "merging"
+revert = "reverting"
+cherry_pick = " picking"                                      # nf-fae-cherry
+bisect = "bisecting"
+am = "am'ing"
+am_or_rebase = "am/rebase"
+format = '[$state($progress_current/$progress_total)]($style)'
+
+[git_status]
+# disabled = true
+style = "bg:color_git_status fg:color_foreground_dark"
+staged = " ${count}"                                  # nf-fa-check
+modified = "  ${count}"                               # nf-fa-edit
+# modified = "  ${count}" # nf-fa-pencil
+renamed = "󰗧 ${count}"    # nf-md-cursor_text
+untracked = "  ${count}" # nf-fa-question
+deleted = "  ${count}"   # nf-fa-remove
+conflicted = " ${count}" # nf-fa-flag
+stashed = "  ${count}"   # nf-fa-bank
+# stashed = "  ${count}" # nf-fa-inbox
+up_to_date = ""
+ahead = "󰞙 ${count}"                          # nf-md-arrow_expand_up
+behind = "󰞖 ${count}"                         # nf-md-arrow_expand_down
+diverged = "󰡏 ${ahead_count} ${behind_count}" # nf-md-arrow_expand_vertical
+# diverged = "󰯎 ${ahead_count} ${behind_count}" # nf-md-swap_vertical_bold
+# ignore_submodules = true
+format = "[($staged$modified$renamed$untracked$deleted$conflicted$stashed$ahead_behind )]($style)"
+
+[battery]
+disabled = false 
+full_symbol = "󰁹"                       # nf-md-battery
+charging_symbol = "󱊥 "                  # nf-md-battery_charging_medium
+discharging_symbol = "󱊡"                # nf-md-battery_low
+unknown_symbol = "󰂑"                    # nf-md-battery_unknown
+empty_symbol = "󰂎"                      # nf-md-battery_outline
+format = "[$symbol$percentage]($style)"
+[[battery.display]]
+threshold = 10
+style = "bold bg:color_base_red_light fg:color_foreground_light"
+[[battery.display]]
+threshold = 20
+style = "bg:color_base_red_light fg:color_foreground_dark"
+[[battery.display]] # uncomment this section to always see your battery information
+threshold = 100
+style = "bg:color_base_red_light fg:color_foreground_light"
+
+
+[palettes.coffee]
+## Generics -- editor
+color_foreground_light = "#fff2cf"      # myth_editor_foreground
+color_foreground_dark = "#895797"       # myth_editor_background
+color_background_base = "#d79494"
+color_directory = "#d081e0"             # myth_editor_
+color_directory_repo_before = "#8A848B" # myth_editor_
+color_hostname = "#DAA25D"              # myth_hosts_local
+color_username = "#1988FF"              # myth_editor_enitity
+color_base_blue = "#b9def8"            # myth_editor_constants
+color_base_magenta = "#BF66FF"          # myth_editor_deprecated
+color_base_orange = "#FFA200"           # myth_editor_main
+color_base_red = "#E83017"              # myth_editor_diff_removed
+color_base_red_light = "#FF620D"        # myth_editor_function
+color_base_red_dark = "#BD1000"
+color_base_yellow = "#FFD90D"           # myth_editor_storages
+## Specifics
+## General colors
+color_os = "#f2ff12"          # color_base_lightYellow
+color_env_var = "#BBBBBB"     # color_memory
+color_memory = "#BBBBBB"      # color_memory
+color_shell_level = "#FFD90D" # color_base_yellow
+color_time = "#FFA200"        # color_base_orange
+color_vimcmd = "#6F6A70"      # color_directory
+
+## Container colors
+color_container = "#a145b4" # color_directory
+color_docker = "#3A91DC"
+
+## Source control colors
+color_git_branch = "#c0e580"
+color_git_commit = "#E58F73"
+color_git_metrics = "#6F6A70"         # color_directory
+color_git_metrics_added = "#C6FF1A"   # color_base_blue
+color_git_metrics_deleted = "#E83017" # color_base_red
+color_git_state = "#E58F73"           # color_git_commit
+color_git_status = "#eeb64d"
+color_vcsh = "#121212"                # color_foreground_dark
+## Toolchain version colors
+
+color_dotnet = "#796add"
+color_nodejs = "#82e982"
+color_python = "#EBD45B"
+
+## Configuration shell modules
+color_guix = "#F4BB15"
+color_nix = "#27385D"
