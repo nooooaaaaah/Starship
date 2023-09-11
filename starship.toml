@@ -10,6 +10,7 @@ continuation_prompt = "[](bg:color_background_base fg:color_base_orange)[�
 palette = "coffee"                                                                                         # select the color palette to be used
 
 format = """\
+    ([](bg:color_foreground_dark fg:color_background_base)${custom.ssh_connection}[](bg:color_background_base fg:color_foreground_dark))\
     $Macos\
     ([](bg:color_foreground_dark fg:color_background_base)$shell[](bg:color_background_base fg:color_foreground_dark))\
     ([](bg:color_base_red_light fg:color_background_base)$sudo[](bg:color_background_base fg:color_base_red_light))\
@@ -248,6 +249,13 @@ style = "bg:color_base_red_light fg:color_foreground_dark"
 threshold = 100
 style = "bg:color_base_red_light fg:color_foreground_light"
 
+[custom.ssh_connection]
+description = "Indicates when connected via SSH"
+command = "echo $SSH_CONNECTION"
+when = "env:SSH_CONNECTION"
+style = "bg:color_ssh_connection fg:color_foreground_light"
+symbol = "" # You can choose any symbol you like
+format = "[$symbol]($style)[](bg:color_background_base fg:color_ssh_connection)"
 
 [palettes.coffee]
 ## Generics -- editor
@@ -287,8 +295,12 @@ color_git_metrics_deleted = "#E83017" # color_base_red
 color_git_state = "#E58F73"           # color_git_commit
 color_git_status = "#eeb64d"
 color_vcsh = "#121212"                # color_foreground_dark
-## Toolchain version colors
 
+
+## SSH Colors
+color_ssh_connection = "#ff5733"
+
+## Toolchain version
 color_dotnet = "#796add"
 color_nodejs = "#82e982"
 color_python = "#EBD45B"
