@@ -99,6 +99,13 @@ repo_root_format = """\
     [$path]($style)\
     [](bg:color_background_base fg:color_directory)\
 """
+[username]
+format = "[($user)](fg:color_foreground_light bg:color_directory)"  # replace with your actual colors
+
+[hostname]
+style = "bg:color_ssh_connection fg:color_foreground_light"  # replace with your actual style
+format = "[($hostname)]($style)"
+
 [nodejs]
 symbol = "💩"
 style = "bg:color_nodejs fg:color_foreground_light"
@@ -247,20 +254,13 @@ style = "bg:color_base_red_light fg:color_foreground_dark"
 threshold = 100
 style = "bg:color_base_red_light fg:color_foreground_light"
 
-[username]
-format = "[$user](fg:color_foreground_light bg:color_directory)"  # replace with your actual colors
-
-[hostname]
-format = "[󰣀$hostname]($style)"
-style = "bg:color_ssh_connection"  # replace with your actual style
-
 [custom.ssh_connection]
 description = "Indicates when connected via SSH"
 command = "echo $SSH_CONNECTION"
 when = "env:SSH_CONNECTION"
 style = "bg:color_ssh_connection fg:color_foreground_light"
 symbol = ""
-format = "[$symbol]($style)[](bg:color_background_base fg:color_ssh_connection)"
+format = "[$symbol]($style)](bg:color_background_base fg:color_ssh_connection)"
 
 [palettes.pastel]
 ## Generics -- editor
