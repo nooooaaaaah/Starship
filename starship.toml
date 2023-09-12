@@ -7,7 +7,7 @@ scan_timeout = 30                                                               
 command_timeout = 500                                                                                      # default = 500
 add_newline = false                                                                                         # Don't print a new line before the start of the prompt
 continuation_prompt = "[](bg:color_background_base fg:color_base_orange)[](fg:color_background_base)"
-palette = "pastel"                                                                                         # select the color palette to be used
+palette = "coffee"                                                                                         # select the color palette to be used
 
 format = """\
     ([](bg:color_foreground_dark fg:color_background_base)$shell[](bg:color_background_base fg:color_foreground_dark))\
@@ -314,3 +314,54 @@ color_python = "#f7eeba"               # soft yellow
 color_guix = "#f7d6a2"                 # soft yellow
 color_nix = "#8f9ab5"                  # soft blue-gray
 
+[palettes.coffee]
+## Generics -- editor
+color_foreground_light = "#f5f1e8"  # Cream
+color_foreground_dark = "#4e453f"   # Espresso
+color_background_base = "#8c7a6e"   # Latte
+color_directory = "#9c8b7c"         # Mocha
+color_directory_repo_before = "#736359"  # Cappuccino
+color_hostname = "#c0a890"          # Macchiato
+color_username = "#6f5e54"          # Coffee Bean
+color_base_blue = "#b8a58f"         # Iced Coffee
+color_base_magenta = "#a99585"      # Americano
+color_base_orange = "#bfa283"       # Frappuccino
+color_base_red = "#a3816b"          # Ristretto
+color_base_red_light = "#c0a38b"    # Cortado
+color_base_red_dark = "#8c7363"     # Lungo
+color_base_yellow = "#d4c3a5"       # Flat White
+
+## Specifics
+## General colors
+color_os = "#dacbb1"                # Café au Lait
+color_env_var = "#ccc1b4"           # Brewed
+color_memory = "#ccc1b4"            # Brewed
+color_shell_level = "#d4c3a5"       # Flat White
+color_time = "#bfa283"              # Frappuccino
+color_vimcmd = "#9c8b7c"            # Mocha
+
+## Container colors
+color_container = "#a78f7e"         # Irish Coffee
+color_docker = "#b9a89b"            # Cold Brew
+
+## Source control colors
+color_git_branch = "#c1b6a1"        # Coffee with Milk
+color_git_commit = "#d1c3b0"        # Latte Art
+color_git_metrics = "#9c8b7c"       # Mocha
+color_git_metrics_added = "#b5a893" # Café Bombón
+color_git_metrics_deleted = "#a3816b" # Ristretto
+color_git_state = "#d1c3b0"         # Latte Art
+color_git_status = "#dacbb1"        # Café au Lait
+color_vcsh = "#6b5e54"              # Dark Roast
+
+## SSH Colors
+color_ssh_connection = "#d3c1ad"    # Caramel Macchiato
+
+## Toolchain version
+color_dotnet = "#a89b8f"           # Vienna Coffee
+color_nodejs = "#bcb09e"           # White Coffee
+color_python = "#d1c4a8"           # Affogato
+
+## Configuration shell modules
+color_guix = "#d3c2ae"             # Turkish Coffee
+color_nix = "#7c6f63"              # Coffee Grounds
