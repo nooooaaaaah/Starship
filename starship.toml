@@ -314,7 +314,7 @@ color_python = "#f7eeba"               # soft yellow
 color_guix = "#f7d6a2"                 # soft yellow
 color_nix = "#8f9ab5"                  # soft blue-gray
 
-[palettes.coffee]
+[palettes.dull]
 ## Generics -- editor
 color_foreground_light = "#f5f1e8"  # Cream
 color_foreground_dark = "#4e453f"   # Espresso
@@ -365,3 +365,45 @@ color_python = "#d1c4a8"           # Affogato
 ## Configuration shell modules
 color_guix = "#d3c2ae"             # Turkish Coffee
 color_nix = "#7c6f63"              # Coffee Grounds
+
+[palettes.coffee]
+## Generics -- editor
+color_foreground_light = "#ffebd2"
+color_foreground_dark = "#5a3825"
+color_background_base = "#6f4a37"
+color_directory = "#8a5d4a"
+color_directory_repo_before = "#a5715d"
+color_hostname = "#c08471"
+color_username = "#db9884"
+color_base_blue = "#e7ab98"
+color_base_magenta = "#f3bfab"
+color_base_orange = "#ffccbf"
+color_base_red = "#ffd9d2"
+color_base_red_light = "#ffe6e6"
+color_base_red_dark = "#fff2f2"
+color_base_yellow = "#ffffff"
+
+## Specifics
+## General colors
+color_os = "#f7d9c5"
+color_env_var = "#f0cbb2"
+color_memory = "#e8be9f"
+color_shell_level = "#e1b08c"
+color_time = "#d9a279"
+color_vimcmd = "#d19566"
+color_container = "#ca8753"
+color_docker = "#c27a40"
+color_git_branch = "#bb6c2d"
+color_git_commit = "#b35f1a"
+color_git_metrics = "#ab5207"
+color_git_metrics_added = "#a34600"
+color_git_metrics_deleted = "#9b3a00"
+color_git_state = "#932e00"
+color_git_status = "#8b2200"
+color_vcsh = "#831600"
+color_ssh_connection = "#7b0a00"
+color_dotnet = "#730000"
+color_nodejs = "#6b0000"
+color_python = "#630000"
+color_guix = "#5b0000"
+color_nix = "#530000"
