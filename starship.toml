@@ -247,10 +247,10 @@ threshold = 100
 style = "bg:color_base_red_light fg:color_foreground_light"
 
 [username]
-format = "[$user in ](fg:color_foreground_light bg:color_directory) "  # replace with your actual colors
+format = "[$user](fg:color_foreground_light bg:color_directory) "  # replace with your actual colors
 
 [hostname]
-format = "[🌐 $hostname in ]($style)"
+format = "[ $hostname]($style)"
 style = "bg:color_ssh_connection"  # replace with your actual style
 
 [custom.ssh_connection]
