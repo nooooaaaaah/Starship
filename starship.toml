@@ -132,7 +132,6 @@ unknown_indicator = "\uf059 "
 style = "bg:color_foreground_dark fg:color_foreground_light"
 format = "[$indicator]($style)"
 
-
 [custom.dotnetUnitTest]
 description = "Display if project is for Unit Tests"
 symbol = "✔"
