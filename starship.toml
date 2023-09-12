@@ -104,7 +104,7 @@ format = "[($user)](fg:color_foreground_light bg:color_directory)"  # replace wi
 
 [hostname]
 style = "bg:color_ssh_connection fg:color_foreground_light"  # replace with your actual style
-format = "[($hostname)]($style)"
+format = "[( $hostname)]($style)"
 
 [nodejs]
 symbol = "💩"
