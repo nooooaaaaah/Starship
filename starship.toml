@@ -66,7 +66,7 @@ right_format = """\
 [character]
 success_symbol = "[](bg:color_base_blue fg:color_background_base)[](fg:color_base_blue)"
 error_symbol = "[](bg:color_base_red fg:color_background_base)[](fg:color_base_red)"
-vicmd_symbol = "[](bg:color_background_base fg:color_base_blue)[  ](bold bg:color_base_blue fg:color_foreground_dark)[](bg:color_base_blue fg:color_foreground_dark)"
+# vicmd_symbol = "[](bg:color_background_base fg:color_base_blue)[  ](bold bg:color_base_blue fg:color_foreground_dark)[](bg:color_base_blue fg:color_foreground_dark)"
 vimcmd_visual_symbol = "[](bg:color_background_base fg:color_base_yellow)[  ](bold bg:color_base_yellow fg:color_foreground_dark)[](bg:color_base_yellow fg:color_foreground_dark)"
 vimcmd_replace_symbol = "[](bg:color_background_base fg:color_base_orange)[  ](bold bg:color_base_orange fg:color_foreground_dark)[](bg:color_base_orange fg:color_foreground_dark)"
 vimcmd_replace_one_symbol = "[](bg:color_background_base fg:color_base_orange)[  ](bold bg:color_base_orange fg:color_foreground_light)[](bg:color_base_orange fg:color_foreground_dark)"
