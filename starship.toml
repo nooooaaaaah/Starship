@@ -31,7 +31,7 @@ format = """\
     ([](bg:color_python fg:color_background_base)$python[](bg:color_background_base fg:color_python))\
     (↑ Toolchain version modules ↑)\
     (↓ Package modules ↓)\
-    ([](bg:color_package fg:color_background_base)$package[](bg:color_background_base fg:color_package))\
+    ([](bg:color_memory fg:color_background_base)$package[](bg:color_background_base fg:color_memory))\
     (↑ Package modules ↑)\
     ([](bg:color_memory fg:color_background_base)$memory_usage[](bg:color_background_base fg:color_memory))\
     ([](bg:color_env_var fg:color_background_base)${env_var.FIRST}[](bg:color_background_base fg:color_env_var))\
@@ -48,6 +48,7 @@ format = """\
     ($status)\
     ($character)\
 """
+
 right_format = """\
     (\
         [](bg:none fg:color_base_blue)[](bg:color_base_blue fg:color_background_base)\
