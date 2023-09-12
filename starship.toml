@@ -250,7 +250,7 @@ style = "bg:color_base_red_light fg:color_foreground_light"
 format = "[$user](fg:color_foreground_light bg:color_directory)"  # replace with your actual colors
 
 [hostname]
-format = "[⛏$hostname]($style)"
+format = "[󰣀$hostname]($style)"
 style = "bg:color_ssh_connection"  # replace with your actual style
 
 [custom.ssh_connection]
@@ -263,51 +263,53 @@ format = "[$symbol]($style)[](bg:color_background_base fg:color_ssh_connectio
 
 [palettes.pastel]
 ## Generics -- editor
-color_foreground_light = "#fff2cf"
-color_foreground_dark = "#895797"
-color_background_base = "#d79494"
-color_directory = "#d081e0"
-color_directory_repo_before = "#8A848B"
-color_hostname = "#DAA25D"
-color_username = "#1988FF"
-color_base_blue = "#b9def8"
-color_base_magenta = "#BF66FF"
-color_base_orange = "#FFA200"
-color_base_red = "#E83017"
-color_base_red_light = "#FF620D"
-color_base_red_dark = "#BD1000"
-color_base_yellow = "#FFD90D"
+color_foreground_light = "#f7e6d9"
+color_foreground_dark = "#b5a9b9"
+color_background_base = "#f0d4d4"
+color_directory = "#e0c1e8"
+color_directory_repo_before = "#c7bdc3"
+color_hostname = "#fad8bb"
+color_username = "#a9cfff"
+color_base_blue = "#d7effa"
+color_base_magenta = "#e6ccff"
+color_base_orange = "#ffdfc7"
+color_base_red = "#f7b3b0"
+color_base_red_light = "#ffcec2"
+color_base_red_dark = "#d89f92"
+color_base_yellow = "#fff7cc"
+
 ## Specifics
 ## General colors
-color_os = "#f2ff12"          # color_base_lightYellow
-color_env_var = "#BBBBBB"     # color_memory
-color_memory = "#BBBBBB"      # color_memory
-color_shell_level = "#FFD90D" # color_base_yellow
-color_time = "#FFA200"        # color_base_orange
-color_vimcmd = "#6F6A70"      # color_directory
+color_os = "#f7ffb1"          # soft yellow
+color_env_var = "#d0d0d0"      # soft gray
+color_memory = "#d0d0d0"      # soft gray
+color_shell_level = "#fff7cc"  # soft yellow
+color_time = "#ffdfc7"        # soft orange
+color_vimcmd = "#bfb5bd"      # soft purple
 
 ## Container colors
-color_container = "#a145b4" # color_directory
-color_docker = "#3A91DC"
+color_container = "#d4a8d9"    # soft purple
+color_docker = "#accfdd"      # soft blue
 
 ## Source control colors
-color_git_branch = "#c0e580"
-color_git_commit = "#E58F73"
-color_git_metrics = "#6F6A70"         # color_directory
-color_git_metrics_added = "#C6FF1A"   # color_base_blue
-color_git_metrics_deleted = "#E83017" # color_base_red
-color_git_state = "#E58F73"           # color_git_commit
-color_git_status = "#eeb64d"
-color_vcsh = "#121212"                # color_foreground_dark
+color_git_branch = "#d9f4cb"           # soft green
+color_git_commit = "#f5d9d2"           # soft pink
+color_git_metrics = "#bfb5bd"          # soft purple
+color_git_metrics_added = "#d0f0d1"    # soft green
+color_git_metrics_deleted = "#f7b3b0"   # soft red
+color_git_state = "#f5d9d2"            # soft pink
+color_git_status = "#f7e3b2"           # soft yellow
+color_vcsh = "#9a8f98"                 # soft dark gray
 
 ## SSH Colors
-color_ssh_connection = "#f67C99"
+color_ssh_connection = "#f9ccd5"       # soft pink
 
 ## Toolchain version
-color_dotnet = "#796add"
-color_nodejs = "#82e982"
-color_python = "#EBD45B"
+color_dotnet = "#b8b2d6"               # soft purple
+color_nodejs = "#c7f3c7"               # soft green
+color_python = "#f7eeba"               # soft yellow
 
 ## Configuration shell modules
-color_guix = "#F4BB15"
-color_nix = "#27385D"
+color_guix = "#f7d6a2"                 # soft yellow
+color_nix = "#8f9ab5"                  # soft blue-gray
+
