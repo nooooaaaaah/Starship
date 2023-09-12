@@ -251,8 +251,8 @@ style = "bg:color_base_red_light fg:color_foreground_light"
 format = "[$user in ](fg:your_color_here bg:your_background_here) "  # replace with your actual colors
 
 [hostname]
-format = "🌐 $hostname in "
-style = "your_desired_style_for_hostname_here"  # replace with your actual style
+format = "[🌐 $hostname in ]"
+style = "bg:color_ssh_connection"  # replace with your actual style
 
 [custom.ssh_connection]
 description = "Indicates when connected via SSH"
